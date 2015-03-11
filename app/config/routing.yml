@@ -1,0 +1,7 @@
+dmoritz_comix_ninja:
+    resource: "@DmoritzComixNinjaBundle/Resources/config/routing.xml"
+    prefix:   /
+
+app:
+    resource: @AppBundle/Controller/
+    type:     annotation

@@ -2,7 +2,7 @@
 
 namespace Dmoritz\ComixNinjaBundle\Controller;
 
-use Symfony\Bundle\FramworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class RandomController extends Controller
 {

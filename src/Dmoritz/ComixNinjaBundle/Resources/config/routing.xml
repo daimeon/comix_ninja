@@ -12,4 +12,7 @@
       <default key="_controller">DmoritzComixNinjaBundle:Random:index</default>
     </route>
 
+    <route id="publisher" path="/publisher">
+        <default key="_controller">DmoritzComixNinjaBundle:Publisher:index</default>
+    </route>
 </routes>

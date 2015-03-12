@@ -16,19 +16,4 @@ class DefaultController extends Controller
     {
         return $this->render('default/index.html.twig');
     }
-
-    public function createAction()
-    {
-        $oPublisher = new Publisher();
-        $oPublisher->setName('Ideenschmiede Paul & Paul (IPP)');
-        $oPublisher->setFoundingYear(1999);
-        $oPublisher->setDefunctYear(null);
-        $oPublisher->setCountry('DE');
-
-        $em = $this->getDoctrine()->getManager;
-        $em->persist($oPublisher);
-        $em->flush();
-
-        return new Response('Created publisher id ' . $oPublisher->getId());
-    }
 }

@@ -12,7 +12,4 @@
       <default key="_controller">DmoritzComixNinjaBundle:Random:index</default>
     </route>
 
-    <route id="generate" path="/generate">
-        <default key="_controller">DmoritzComixNinjaBundle:Default:create</default>
-    </route>
 </routes>

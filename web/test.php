@@ -12,7 +12,17 @@
   <body>
 
     <h1>Hello, world!</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-*-*"></div>
+        </div>
+        <div class="row">
+            <div class="col-*-*"></div>
+            <div class="col-*-*"></div>
+            <div class="col-*-*"></div>
+        </div>
 
+    </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

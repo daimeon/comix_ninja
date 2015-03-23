@@ -22,6 +22,7 @@ class PublisherController extends Controller
         $publisher->setName('Carlsen Comics');
         $publisher->setCountry('DE');
         $publisher->setFoundingYear(1967);
+        $publisher->setLogo('carlsen_comics_logo.png');
 
         $em = $this->getDoctrine()->getManager();
 

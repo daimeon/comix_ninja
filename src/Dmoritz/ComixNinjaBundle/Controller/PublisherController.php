@@ -30,12 +30,12 @@ class PublisherController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $em->persist($publisher);
-        $em->flush();
+        $em->flush();*/
 $id = 1;
-*/
+
         $publisher = $this->getDoctrine()
             ->getRepository('Dmoritz\ComixNinjaBundle\Entity\Publisher');
-        $publisher->find(1);
+        $publisher->find($id);
         if (!$publisher)
         {
             throw $this->createNotFoundException('No publisher found for ID ' . $id);

@@ -15,7 +15,7 @@ class PublisherService
 {
     public function getPublisher($iPublisherId = null)
     {
-        $_oConnection = new databaseConnect($this->container);
+        $_oConnection = new databaseConnect();
         $_oPublisherQuery = new getPublisher();
         $_aPublishers = $_oPublisherQuery->getPublisher();
 

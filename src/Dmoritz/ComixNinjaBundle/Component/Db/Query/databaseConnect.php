@@ -9,14 +9,11 @@
 namespace Dmoritz\ComixNinjaBundle\Component\Db\Query;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class databaseConnect
+class databaseConnect extends Controller
 {
 
-    private $container;
-
-    public function __construct($c)
+    public function __construct()
     {
-        $this->container = $c;
         $_bDatabaseConnection = mysql_connect(
             $this->container->getParameter('database_host'),
             $this->container->getParameter('database_user'),

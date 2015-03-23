@@ -16,7 +16,6 @@ class PublisherController extends Controller
 {
     public function indexAction()
     {
-        print_r($this->container);die;
         $oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);
         $_aPublishers = $oPublisherService->getPublisher();
 

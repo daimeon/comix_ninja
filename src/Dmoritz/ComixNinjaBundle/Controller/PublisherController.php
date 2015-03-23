@@ -14,7 +14,7 @@ class PublisherController extends Controller
 {
     public function indexAction()
     {
-        $_oConnection = new databaseConnect($this->container);
+        $_oConnection = new databaseConnect();
         var_dump($_oConnection);
         return $this->render(
             'DmoritzComixNinjaBundle:Publisher:index.html.twig'

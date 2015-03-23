@@ -14,6 +14,7 @@ class getPublisher
 
     public function getPublisher($iPublisherId = null)
     {
+        var_dump('aaaaaaa');
         $_sQuery  = 'SELECT *';
         $_sQuery .= ' FROM Publisher';
         $_sQuery .= ' ORDER BY name';

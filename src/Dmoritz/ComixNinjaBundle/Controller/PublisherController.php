@@ -35,7 +35,7 @@ $id = 1;
 */
         $publisher = $this->getDoctrine()
             ->getRepository('Dmoritz\ComixNinjaBundle\Entity\Publisher');
-        $publisher->findAll();
+        $publisher->find(1);
         if (!$publisher)
         {
             throw $this->createNotFoundException('No publisher found for ID ' . $id);

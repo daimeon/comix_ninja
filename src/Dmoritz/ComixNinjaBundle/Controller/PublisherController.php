@@ -40,7 +40,8 @@ class PublisherController extends Controller
         return $this->render(
             'DmoritzComixNinjaBundle:Publisher:details.html.twig',
             array(
-                'oPublisher' => $_oPublisher
+                'oPublisher' => $_oPublisher,
+                'test' => 'hallo'
             )
 
         );

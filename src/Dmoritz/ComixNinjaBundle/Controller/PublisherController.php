@@ -17,8 +17,8 @@ class PublisherController extends Controller
         /** @var PublisherServiceInterface $_oPublisherService */
         $_oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);
 
-        $_oPublisherService->getPublishers();
-        var_dump($_oPublisherService);die;
+        //$_oPublisherService->getPublishers();
+
 
 
         /*$publisher = new Publisher();
@@ -32,7 +32,7 @@ class PublisherController extends Controller
         $em->persist($publisher);
         $em->flush();
 $id = 1;
-
+*/
         $publisher = $this->getDoctrine()
             ->getRepository('Dmoritz\ComixNinjaBundle\Entity\Publisher');
         $publisher->findAll();
@@ -40,7 +40,7 @@ $id = 1;
         {
             throw $this->createNotFoundException('No publisher found for ID ' . $id);
         }
-        var_dump($publisher);die;*/
+        var_dump($publisher);die;
 
         return $this->render(
             'DmoritzComixNinjaBundle:Publisher:index.html.twig'

@@ -143,6 +143,8 @@ class Publisher
     }
 
     /**
+     * Get logo
+     *
      * @return string
      */
     public function getLogo()
@@ -151,10 +153,15 @@ class Publisher
     }
 
     /**
+     * Set logo
+     *
      * @param string $logo
+     * @return Publisher
      */
     public function setLogo($logo)
     {
         $this->logo = $logo;
+
+        return $this;
     }
 }

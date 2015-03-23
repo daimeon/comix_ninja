@@ -14,8 +14,8 @@ class PublisherService
     public function getPublishers()
     {
         $publisher = $this->getDoctrine()
-            ->getRepository('Dmoritz\ComixNinjaBundle\Entity\Publisher');
-        $publisher->findAll();
+            ->getRepository('Dmoritz\ComixNinjaBundle\Entity\Publisher')
+            ->findAll();
         if (!$publisher)
         {
             return null;

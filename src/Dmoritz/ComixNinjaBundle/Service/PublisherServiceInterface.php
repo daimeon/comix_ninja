@@ -10,7 +10,7 @@ namespace Dmoritz\ComixNinjaBundle\Service;
 
 interface PublisherServiceInterface
 {
-    const DIC_NAME = 'ComixBundle.PublisherServiceInterface';
+    const DIC_NAME = 'ComixNinja.PublisherServiceInterface';
 
     /**
      * @return mixed

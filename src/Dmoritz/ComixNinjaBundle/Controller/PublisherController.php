@@ -17,7 +17,8 @@ class PublisherController extends Controller
     {
         $_oConnection = new databaseConnect($this->container);
         $_oPublisherQuery = new getPublisher();
-        $_oPublisherQuery->getPublisher();
+        $_aPublishers = $_oPublisherQuery->getPublisher();
+        var_dump($_aPublishers);
         return $this->render(
             'DmoritzComixNinjaBundle:Publisher:index.html.twig'
         );

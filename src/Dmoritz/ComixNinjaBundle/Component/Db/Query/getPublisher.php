@@ -14,13 +14,13 @@ class getPublisher
 
     public function getPublisher($iPublisherId = null)
     {
-        var_dump('aaaaaaa');
         $_sQuery  = 'SELECT *';
         $_sQuery .= ' FROM Publisher';
         $_sQuery .= ' ORDER BY name';
 
         $retval = mysql_query($_sQuery);
         $aResult = mysql_fetch_assoc($retval);
-        var_dump($aResult);
+
+        return $aResult;
     }
 }

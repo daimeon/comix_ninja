@@ -31,4 +31,16 @@ class PublisherService
         }
         return $publisher;
     }
+
+    public function getPublisherById($iPublisherId)
+    {
+        $oPublisher = $this
+            ->entityManager
+            ->getRepository('Dmoritz\ComixNinjaBundle\Entity\Publisher')
+            ->find($iPublisherId);
+        if(!$oPublisher){
+            return null;
+        }
+        return $oPublisher;
+    }
 }

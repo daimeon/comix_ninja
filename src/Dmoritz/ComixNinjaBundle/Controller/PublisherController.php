@@ -17,31 +17,8 @@ class PublisherController extends Controller
         /** @var PublisherServiceInterface $_oPublisherService */
         $_oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);
 
-        $_oPublisher = $_oPublisherService->getPublishers();
+        $_oPublisher = $_oPublisherService->getPublisherById(3);
         var_dump($_oPublisher);die;
-
-
-
-        /*$publisher = new Publisher();
-        $publisher->setName('Carlsen Comics');
-        $publisher->setCountry('DE');
-        $publisher->setFoundingYear(1967);
-        $publisher->setLogo('carlsen_comics_logo.png');
-
-        $em = $this->getDoctrine()->getManager();
-
-        $em->persist($publisher);
-        $em->flush();
-$id = 1;
-
-        $publisher = $this->getDoctrine()
-            ->getRepository('Dmoritz\ComixNinjaBundle\Entity\Publisher')
-            ->find(1);
-        if (!$publisher)
-        {
-            throw $this->createNotFoundException('No publisher found for ID ' . $id);
-        }
-*/
 
         return $this->render(
             'DmoritzComixNinjaBundle:Publisher:index.html.twig'

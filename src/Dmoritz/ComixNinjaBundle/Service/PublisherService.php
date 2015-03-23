@@ -21,15 +21,19 @@ class PublisherService
     }
     public function getPublishers()
     {
-        $publisher = $this
+        $repository = $this
             ->entityManager
-            ->getRepository('Dmoritz\ComixNinjaBundle\Entity\Publisher')
-            ->find(2);
-        if (!$publisher)
+            ->getRepository('Dmoritz\ComixNinjaBundle\Entity\Publisher');
+
+        $query = $repository->createQueryBuilder('p')
+            ->orderBy('p.name', 'ASC')
+            ->getQuery();
+        $aPublishers = $query->getResult();
+        if (!$aPublishers)
         {
             return null;
         }
-        return $publisher;
+        return $aPublishers;
     }
 
     public function getPublisherById($iPublisherId)

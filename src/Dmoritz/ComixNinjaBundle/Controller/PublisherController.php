@@ -18,13 +18,33 @@ class PublisherController extends Controller
         $_oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);
 
         $_oPublisher = $_oPublisherService->getPublisherById(3);
-        var_dump($_oPublisher);die;
 
         return $this->render(
             'DmoritzComixNinjaBundle:Publisher:index.html.twig'
         );
     }
 
+    /**
+     * showing detailed information about a publisher
+     *
+     * @param $iPublisherId
+     * @return mixed
+     */
+    public function showDetailsAction($iPublisherId)
+    {
+        /** @var PublisherServiceInterface $_oPublisherService */
+        $_oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);
+
+        $_oPublisher = $_oPublisherService->getPublisherById($iPublisherId);
+
+        return $this->render(
+            'DmoritzComixNinjaBundle:Publisher:details.html.twig',
+            array(
+                'oPublisher' => $_oPublisher
+            )
+
+        );
+    }
     /**
      * @todo: move to parent class
      *

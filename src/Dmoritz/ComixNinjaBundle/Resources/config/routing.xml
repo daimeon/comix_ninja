@@ -15,4 +15,10 @@
     <route id="publisher" path="/publisher">
         <default key="_controller">DmoritzComixNinjaBundle:Publisher:index</default>
     </route>
+
+    <route id="publisherDetails" path="/publisherDetails/{id}">
+        <default key="_controller">DmoritzComixNinjaBundle:Publicher:showDetails</default>
+        <requirement key="id">\d+</requirement>
+    </route>
+
 </routes>

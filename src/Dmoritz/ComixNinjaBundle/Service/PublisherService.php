@@ -36,7 +36,7 @@ class PublisherService
     {
         $oPublisher = $this
             ->entityManager
-            ->getRepository('ComixNinjaBundle:Publisher')
+            ->getRepository('Dmoritz\ComixNinjaBundle\Entity\Publisher')
             ->find($iPublisherId);
         if(!$oPublisher){
             return null;

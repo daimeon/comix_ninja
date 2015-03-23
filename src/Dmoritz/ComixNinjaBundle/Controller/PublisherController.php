@@ -41,7 +41,6 @@ class PublisherController extends Controller
             'DmoritzComixNinjaBundle:Publisher:details.html.twig',
             array(
                 'oPublisher' => $_oPublisher,
-                'test' => 'hallo'
             )
 
         );

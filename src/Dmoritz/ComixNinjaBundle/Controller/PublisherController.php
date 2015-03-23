@@ -10,11 +10,15 @@ namespace Dmoritz\ComixNinjaBundle\Controller;
 use Dmoritz\ComixNinjaBundle\Component\Db\Query\databaseConnect;
 use Dmoritz\ComixNinjaBundle\Component\Db\Query\getPublisher;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Dmoritz\ComixNinjaBundle\Service\Publisher\PublisherServiceInterface;
 
 class PublisherController extends Controller
 {
     public function indexAction()
     {
+        $oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);
+        $_aPublishers = $oPublisherService->getPublisher();
+var_dump($_aPublishers);die;
         $_oConnection = new databaseConnect($this->container);
         $_oPublisherQuery = new getPublisher();
         $_aPublishers = $_oPublisherQuery->getPublisher();
@@ -22,5 +26,16 @@ class PublisherController extends Controller
         return $this->render(
             'DmoritzComixNinjaBundle:Publisher:index.html.twig'
         );
+    }
+
+    /**
+     * @todo: move to parent class
+     *
+     * @param $id
+     * @return mixed
+     */
+    public function get($id)
+    {
+        return $this->container->get($id);
     }
 }

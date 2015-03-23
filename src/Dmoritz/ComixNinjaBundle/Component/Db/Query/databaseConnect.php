@@ -16,6 +16,7 @@ class databaseConnect
 
     public function __construct($c)
     {
+        var_dump('doing connect');
         $this->container = $c;
         $_bDatabaseConnection = mysql_connect(
             $this->container->getParameter('database_host'),

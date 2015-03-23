@@ -18,6 +18,7 @@
 
         <service id="ComixNinja.PublisherServiceInterface"
                  class="Dmoritz\ComixNinjaBundle\Service\PublisherService">
+            <argument type="service" id="doctrine.orm.entity_manager" />
         </service>
 
     </services>

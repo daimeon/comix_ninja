@@ -17,7 +17,7 @@
     </route>
 
     <route id="publisherDetails" path="/publisherDetails/{id}">
-        <default key="_controller">DmoritzComixNinjaBundle:Publicher:showDetails</default>
+        <default key="_controller">DmoritzComixNinjaBundle:Publisher:showDetails</default>
         <requirement key="id">\d+</requirement>
     </route>
 

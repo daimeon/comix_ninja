@@ -40,7 +40,7 @@ $id = 1;
         {
             throw $this->createNotFoundException('No publisher found for ID ' . $id);
         }
-        var_dump($publisher);die;
+
 
         return $this->render(
             'DmoritzComixNinjaBundle:Publisher:index.html.twig'

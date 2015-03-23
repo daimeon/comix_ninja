@@ -31,7 +31,7 @@ class PublisherController extends Controller
 
 
         $publisher = $this->getDoctrine()
-            ->getRepository('ComixNinjaBundle:Publisher')
+            ->getRepository('Dmoritz:ComixNinjaBundle:Entity:Publisher')
             ->find(1);
         if (!$publisher)
         {

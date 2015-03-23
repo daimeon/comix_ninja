@@ -78,6 +78,7 @@
 {% endblock %}
 
 {% block javascripts %}
+    (function ($) {
     var row=$('.logo');
     $.each(row, function() {
         var maxh=0;
@@ -88,5 +89,6 @@
     $.each($(this).find('div[class^="col-"]'), function() {
         $(this).height(maxh);
         });
+    });
     });
 {% endblock %}

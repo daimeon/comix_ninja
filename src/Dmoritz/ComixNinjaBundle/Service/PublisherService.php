@@ -24,7 +24,7 @@ class PublisherService
         $publisher = $this
             ->entityManager
             ->getRepository('Dmoritz\ComixNinjaBundle\Entity\Publisher')
-            ->findAll();
+            ->find(1);
         if (!$publisher)
         {
             return null;

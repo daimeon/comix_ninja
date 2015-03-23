@@ -7,14 +7,15 @@
  */
 namespace Dmoritz\ComixNinjaBundle\Controller;
 
+use Dmoritz\ComixNinjaBundle\Component\Db\Query\databaseConnect;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class PublisherController extends Controller
 {
     public function indexAction()
     {
-        $_dbName = $this->container->getParameter('database_name');
-        var_dump($_dbName);die;
+        $_oConnection = new databaseConnect();
+        var_dump($_oConnection);
         return $this->render(
             'DmoritzComixNinjaBundle:Publisher:index.html.twig'
         );

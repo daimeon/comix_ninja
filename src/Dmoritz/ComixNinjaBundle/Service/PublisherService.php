@@ -8,6 +8,8 @@
 
 namespace Dmoritz\ComixNinjaBundle\Service;
 
+use Doctrine\ORM\EntityManager;
+
 class PublisherService
 {
 

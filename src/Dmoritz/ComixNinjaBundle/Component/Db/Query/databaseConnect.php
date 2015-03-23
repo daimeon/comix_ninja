@@ -26,7 +26,6 @@ class databaseConnect
         {
             die('Connection failed');
         }
-        var_dump($_bDatabaseConnection);
-        mysql_close($_bDatabaseConnection);
+        mysql_select_db($this->container->getParameter('database_name'));
     }
 }

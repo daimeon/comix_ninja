@@ -55,7 +55,9 @@
         {% for oPublisher in aPublishers %}
             <div class="col-md-4">
                 <div class="thumbnail">
-                    <img src="/assets/img/logos/{{ oPublisher.logo }}" alt="{{ oPublisher.name }}" width="100">
+                    <div style="min-height: 100px">
+                        <img src="/assets/img/logos/{{ oPublisher.logo }}" alt="{{ oPublisher.name }}" width="100">
+                    </div>
                     <div class="caption">
                         <h4>{{ oPublisher.name }}</h4>
                         <p>

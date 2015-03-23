@@ -18,7 +18,7 @@ class PublisherController extends Controller
     public function indexAction()
     {
 
-        $publisher = new Publisher();
+        /*$publisher = new Publisher();
         $publisher->setName('Carlsen Comics');
         $publisher->setCountry('DE');
         $publisher->setFoundingYear(1967);
@@ -27,15 +27,18 @@ class PublisherController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $em->persist($publisher);
-        $em->flush();
-        /*
-        $oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);
-        $_aPublishers = $oPublisherService->getPublisher();
+        $em->flush();*/
 
-        $_oConnection = new databaseConnect($this->container);
-        $_oPublisherQuery = new getPublisher();
-        $_aPublishers = $_oPublisherQuery->getPublisher();
-        var_dump($_aPublishers);*/
+
+        $publisher = $this->getDoctrine()
+            ->getRepository('ComixNinjaBundle:Publisher')
+            ->find(1);
+        if (!$publisher)
+        {
+            throw $this->createNotFoundException('No publisher found for ID ' . $id);
+        }
+        var_dump($publisher);die;
+
         return $this->render(
             'DmoritzComixNinjaBundle:Publisher:index.html.twig'
         );

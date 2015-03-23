@@ -16,9 +16,5 @@
 
     <services>
 
-        <service id="ComixNinja.PublisherServiceInterface"
-                 class="Dmoritz\ComixNinjaBundle\Service\Publisher\PublisherService">
-        </service>
-
     </services>
 </container>

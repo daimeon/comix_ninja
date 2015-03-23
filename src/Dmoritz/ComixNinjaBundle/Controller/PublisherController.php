@@ -21,7 +21,10 @@ class PublisherController extends Controller
         var_dump($_aPublishers);
 
         return $this->render(
-            'DmoritzComixNinjaBundle:Publisher:index.html.twig'
+            'DmoritzComixNinjaBundle:Publisher:index.html.twig',
+            array(
+                'aPublishers' => $_aPublishers
+            )
         );
     }
 

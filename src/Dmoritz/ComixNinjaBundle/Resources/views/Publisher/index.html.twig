@@ -54,7 +54,7 @@
     <div class="row">
         {% for oPublisher in aPublishers %}
             <div class="col-md-4">
-                <div class="thumbnail" style="width: 200px; height: 350px; overflow: auto">
+                <div class="thumbnail logo">
                     <div>
                         <img src="/assets/img/logos/{{ oPublisher.logo }}" alt="{{ oPublisher.name }}" width="150" style="align-self: center">
                     </div>
@@ -75,4 +75,18 @@
         {% endfor %}
     </div>
 
+{% endblock %}
+
+{% block javascripts %}
+    var row=$('.logo');
+    $.each(row, function() {
+        var maxh=0;
+        $.each($(this).find('div[class^="col-"]'), function() {
+            if($(this).height() > maxh)
+                maxh=$(this).height();
+        });
+    $.each($(this).find('div[class^="col-"]'), function() {
+        $(this).height(maxh);
+        });
+    });
 {% endblock %}

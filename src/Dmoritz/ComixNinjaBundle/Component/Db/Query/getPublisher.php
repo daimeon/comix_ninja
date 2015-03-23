@@ -19,7 +19,8 @@ class getPublisher
         $_sQuery .= ' FROM Publisher';
         $_sQuery .= ' ORDER BY name';
 
-        $aResult = mysql_fetch_assoc($_sQuery);
+        $retval = mysql_query($_sQuery);
+        $aResult = mysql_fetch_assoc($retval);
         var_dump($aResult);
     }
 }

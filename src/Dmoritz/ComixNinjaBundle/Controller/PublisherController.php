@@ -13,7 +13,7 @@ class PublisherController extends Controller
 {
     public function indexAction()
     {
-        $this->container->getParameter('database_name');
+        $_dbName = $this->container->getParameter('database_name');
         return $this->render(
             'DmoritzComixNinjaBundle:Publisher:index.html.twig'
         );

@@ -8,10 +8,13 @@
 
 namespace Dmoritz\ComixNinjaBundle\Component\Db\Query;
 
+
 class databaseConnect
 {
-    public function __construct()
+
+    public function __construct(Container $c)
     {
+        $this->container = $c;
         $_bDatabaseConnection = mysql_connect(
             $this->container->getParameter('database_host'),
             $this->container->getParameter('database_user'),

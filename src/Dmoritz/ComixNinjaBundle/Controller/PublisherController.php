@@ -28,10 +28,10 @@ class PublisherController extends Controller
 
         $em->persist($publisher);
         $em->flush();*/
-
+$id = 1;
 
         $publisher = $this->getDoctrine()
-            ->getRepository('Dmoritz:ComixNinjaBundle:Entity:Publisher')
+            ->getRepository('ComixNinjaBundle:Publisher')
             ->find(1);
         if (!$publisher)
         {

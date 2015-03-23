@@ -12,11 +12,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class databaseConnect
 {
 
+    private $container;
+
     public function __construct($c)
     {
-        var_dump('hello!');
-        var_dump($c);die;
-        /*$_bDatabaseConnection = mysql_connect(
+        $this->container = $c;
+        $_bDatabaseConnection = mysql_connect(
             $this->container->getParameter('database_host'),
             $this->container->getParameter('database_user'),
             $this->container->getParameter('database_password')
@@ -25,6 +26,6 @@ class databaseConnect
         {
             die('Connection failed');
         }
-        mysql_close($_bDatabaseConnection);*/
+        mysql_close($_bDatabaseConnection);
     }
 }

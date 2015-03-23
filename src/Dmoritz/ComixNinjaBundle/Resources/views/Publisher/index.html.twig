@@ -78,6 +78,7 @@
 {% endblock %}
 
 {% block javascripts %}
+    {% javascripts %}
     (function ($) {
     var row=$('.logo');
     $.each(row, function() {
@@ -91,4 +92,5 @@
         });
     });
     });
+    {% endjavascripts %}
 {% endblock %}

@@ -16,9 +16,9 @@
         <default key="_controller">DmoritzComixNinjaBundle:Publisher:index</default>
     </route>
 
-    <route id="publisherDetails" path="/publisherDetails/{id}">
+    <route id="publisherDetails" path="/publisherDetails/{iPublisherId}">
         <default key="_controller">DmoritzComixNinjaBundle:Publisher:showDetails</default>
-        <requirement key="id">\d+</requirement>
+        <requirement key="iPublisherId">\d+</requirement>
     </route>
 
 </routes>

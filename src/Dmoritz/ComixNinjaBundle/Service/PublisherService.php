@@ -11,9 +11,16 @@ namespace Dmoritz\ComixNinjaBundle\Service;
 class PublisherService
 {
 
+    private $entityManager;
+
+    public function __construct(EntityManager $entityManager)
+    {
+        $this->entityManager = $entityManager;
+    }
     public function getPublishers()
     {
-        $publisher = $this->getDoctrine()
+        $publisher = $this
+            ->entityManager
             ->getRepository('Dmoritz\ComixNinjaBundle\Entity\Publisher')
             ->findAll();
         if (!$publisher)

@@ -15,7 +15,7 @@ class PublisherController extends Controller
     public function indexAction()
     {
         /** @var PublisherServiceInterface $_oPublisherService */
-        $_oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);
+        //$_oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);
 
         //$_oPublisherService->getPublishers();
 
@@ -34,13 +34,13 @@ class PublisherController extends Controller
 $id = 1;
 
         $publisher = $this->getDoctrine()
-            ->getRepository('Dmoritz\ComixNinjaBundle\Entity\Publisher');
-        $publisher->find($id);
+            ->getRepository('Dmoritz\ComixNinjaBundle\Entity\Publisher')
+            ->find(1);
         if (!$publisher)
         {
             throw $this->createNotFoundException('No publisher found for ID ' . $id);
         }
-        var_dump($publisher);
+        var_dump($publisher);die;
 
         return $this->render(
             'DmoritzComixNinjaBundle:Publisher:index.html.twig'

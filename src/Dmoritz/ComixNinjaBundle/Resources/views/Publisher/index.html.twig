@@ -54,11 +54,11 @@
     <div class="row">
         {% for oPublisher in aPublishers %}
             <div class="col-xs-6 col-md-3">
-                <a href="#" class="thumbnail" style="min-height: 160px">
+                <div class="thumbnail" style="min-height: 160px">
                     <img src="/assets/img/logos/{{ oPublisher.logo }}" alt="{{ oPublisher.name }}" width="100">
-                </a>
-                <div class="caption">
-                    {{ oPublisher.name }}
+                    <div class="caption">
+                        {{ oPublisher.name }}
+                    </div>
                 </div>
             </div>
             <br/>

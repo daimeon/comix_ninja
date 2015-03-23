@@ -7,9 +7,8 @@
  */
 namespace Dmoritz\ComixNinjaBundle\Controller;
 
-use Dmoritz\ComixNinjaBundle\Service\PublisherService;
+use Dmoritz\ComixNinjaBundle\Service\PublisherServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Dmoritz\ComixNinjaBundle\Service\Publisher\PublisherServiceInterface;
 
 class PublisherController extends Controller
 {

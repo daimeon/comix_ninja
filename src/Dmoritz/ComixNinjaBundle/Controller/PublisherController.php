@@ -18,7 +18,7 @@ class PublisherController extends Controller
         $_oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);
 
         $_aPublishers = $_oPublisherService->getPublishers();
-
+var_dump($_aPublishers);
         return $this->render(
             'DmoritzComixNinjaBundle:Publisher:index.html.twig',
             array(

@@ -14,7 +14,7 @@ class PublisherController extends Controller
 {
     public function indexAction()
     {
-        // $_oRatingsManagerService = $this->get(RatingsManagerServiceInterface::DIC_NAME);
+        /** @var PublisherServiceInterface $_oPublisherService */
         $_oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);
 
         $_oPublisherService->getPublishers();

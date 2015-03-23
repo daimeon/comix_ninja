@@ -14,6 +14,7 @@ class PublisherController extends Controller
 {
     public function indexAction()
     {
+        var_dump($this->container);
         $_oConnection = new databaseConnect();
         var_dump($_oConnection);
         return $this->render(

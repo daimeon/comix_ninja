@@ -35,22 +35,6 @@ class Publisher
     private $country;
 
     /**
-     * @return string
-     */
-    public function getLogo()
-    {
-        return $this->logo;
-    }
-
-    /**
-     * @param string $logo
-     */
-    public function setLogo($logo)
-    {
-        $this->logo = $logo;
-    }
-
-    /**
      * @var string
      */
     private $logo;
@@ -156,5 +140,21 @@ class Publisher
     public function getCountry()
     {
         return $this->country;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLogo()
+    {
+        return $this->logo;
+    }
+
+    /**
+     * @param string $logo
+     */
+    public function setLogo($logo)
+    {
+        $this->logo = $logo;
     }
 }

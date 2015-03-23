@@ -12,8 +12,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class databaseConnect
 {
 
-    public function __construct()
+    public function __construct($c)
     {
+        var_dump('hello!');
+        var_dump($c);die;
         /*$_bDatabaseConnection = mysql_connect(
             $this->container->getParameter('database_host'),
             $this->container->getParameter('database_user'),

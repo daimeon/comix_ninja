@@ -7,9 +7,7 @@
  */
 namespace Dmoritz\ComixNinjaBundle\Controller;
 
-use Dmoritz\ComixNinjaBundle\Component\Db\Query\databaseConnect;
-use Dmoritz\ComixNinjaBundle\Component\Db\Query\getPublisher;
-use Dmoritz\ComixNinjaBundle\Entity\Publisher;
+use Dmoritz\ComixNinjaBundle\Service\PublisherService;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Dmoritz\ComixNinjaBundle\Service\Publisher\PublisherServiceInterface;
 
@@ -17,6 +15,12 @@ class PublisherController extends Controller
 {
     public function indexAction()
     {
+        // $_oRatingsManagerService = $this->get(RatingsManagerServiceInterface::DIC_NAME);
+        $_oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);
+
+        $_oPublisherService->getPublishers();
+        var_dump($_oPublisherService);die;
+
 
         /*$publisher = new Publisher();
         $publisher->setName('Carlsen Comics');
@@ -27,7 +31,7 @@ class PublisherController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $em->persist($publisher);
-        $em->flush();*/
+        $em->flush();
 $id = 1;
 
         $publisher = $this->getDoctrine()
@@ -37,7 +41,7 @@ $id = 1;
         {
             throw $this->createNotFoundException('No publisher found for ID ' . $id);
         }
-        var_dump($publisher);die;
+        var_dump($publisher);die;*/
 
         return $this->render(
             'DmoritzComixNinjaBundle:Publisher:index.html.twig'

@@ -13,11 +13,21 @@ interface PublisherServiceInterface
     const DIC_NAME = 'ComixBungle.PublisherServiceInterface';
 
     /**
-     * @param null $iPublisherId
      * @return mixed
      */
-    public function getPublisher($iPublisherId = null);
+    public function getPublishers();
 
+    /**
+     * @param $iPublisherId
+     * @return mixed
+     */
+    public function getPublisherById($iPublisherId);
+
+    /**
+     * @param $sPublisherName
+     * @return mixed
+     */
+    public function getPublisherByName($sPublisherName);
 }
 
 

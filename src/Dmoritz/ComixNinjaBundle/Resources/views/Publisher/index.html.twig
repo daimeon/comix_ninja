@@ -54,8 +54,8 @@
     <div class="row">
         {% for oPublisher in aPublishers %}
             <div class="col-md-4">
-                <div class="thumbnail">
-                    <div style="min-height: 100px">
+                <div class="thumbnail" style="width: 100px; height: 150px; overflow: auto">
+                    <div>
                         <img src="/assets/img/logos/{{ oPublisher.logo }}" alt="{{ oPublisher.name }}" width="100">
                     </div>
                     <div class="caption">

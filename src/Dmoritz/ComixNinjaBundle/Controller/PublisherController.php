@@ -14,6 +14,7 @@ class PublisherController extends Controller
     public function indexAction()
     {
         $_dbName = $this->container->getParameter('database_name');
+        var_dump($_dbName);die;
         return $this->render(
             'DmoritzComixNinjaBundle:Publisher:index.html.twig'
         );

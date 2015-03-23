@@ -14,7 +14,7 @@ class databaseConnect
 
     public function __construct()
     {
-        $_bDatabaseConnection = mysql_connect(
+        /*$_bDatabaseConnection = mysql_connect(
             $this->container->getParameter('database_host'),
             $this->container->getParameter('database_user'),
             $this->container->getParameter('database_password')
@@ -23,6 +23,6 @@ class databaseConnect
         {
             die('Connection failed');
         }
-        mysql_close($_bDatabaseConnection);
+        mysql_close($_bDatabaseConnection);*/
     }
 }

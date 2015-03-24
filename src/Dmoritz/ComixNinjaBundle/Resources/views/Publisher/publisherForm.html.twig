@@ -52,6 +52,9 @@
 {% block body %}
 Add a new publisher
     <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
 {% endblock %}
 
 {% block javascripts %}

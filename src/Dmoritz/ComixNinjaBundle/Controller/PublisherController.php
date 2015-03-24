@@ -7,6 +7,7 @@
  */
 namespace Dmoritz\ComixNinjaBundle\Controller;
 
+use Dmoritz\ComixNinjaBundle\Entity\Publisher;
 use Dmoritz\ComixNinjaBundle\Service\PublisherServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -53,9 +54,23 @@ class PublisherController extends DefaultController
      */
     public function addPublisherAction()
     {
-        return $this->render(
-            'DmoritzComixNinjaBundle:Publisher:publisherForm.html.twig'
 
+        $oPublisher = new Publisher();
+
+        $form = $this->createFormBuilder($oPublisher)
+            ->add('name', 'text')
+            ->add('foundingYear', 'text')
+            ->add('defunctYear', 'text')
+            ->add('logo', 'text')
+            ->add('save', 'submit', array('label' => 'Create Publisher'))
+        ->getForm();
+
+
+        return $this->render(
+            'DmoritzComixNinjaBundle:Publisher:publisherForm.html.twig',
+            array(
+                'form' => $form->createView()
+            )
         );
     }
 

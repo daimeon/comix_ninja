@@ -78,7 +78,15 @@
 {% endblock %}
 
 {% block javascripts %}
-   $(".logo").each(function(index) {
-      console.log(index + ": " + $(this).height());
+    var row=$('.logo');
+    $.each(row, function() {
+    var maxh=0;
+    $.each($(this).find('div[class^="col-"]'), function() {
+    if($(this).height() > maxh)
+    maxh=$(this).height();
+    });
+    $.each($(this).find('div[class^="col-"]'), function() {
+    $(this).height(maxh);
+    });
     });
 {% endblock %}

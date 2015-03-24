@@ -10,6 +10,7 @@ namespace Dmoritz\ComixNinjaBundle\Controller;
 use Dmoritz\ComixNinjaBundle\Entity\Publisher;
 use Dmoritz\ComixNinjaBundle\Service\PublisherServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class PublisherController extends DefaultController
 {
@@ -52,7 +53,7 @@ class PublisherController extends DefaultController
     /**
      * @return mixed
      */
-    public function addPublisherAction()
+    public function addPublisherAction(Request $request)
     {
 
         $oPublisher = new Publisher();
@@ -64,6 +65,14 @@ class PublisherController extends DefaultController
             ->add('logo', 'text')
             ->add('save', 'submit', array('label' => 'Create Publisher'))
         ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isValid())
+        {
+
+            return $this->redirectToRoute('task_success');
+        }
 
 
         return $this->render(

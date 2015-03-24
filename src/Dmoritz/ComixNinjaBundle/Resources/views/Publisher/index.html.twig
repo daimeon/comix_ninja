@@ -74,22 +74,24 @@
             {% endif %}
         {% endfor %}
     </div>
-
+<div id="divTest1"></div>
 {% endblock %}
 
 {% block javascripts %}
-    $(document).ready(function ()
-    {
-        var row=$('.logo');
-        $.each(row, function() {
-            var maxh=0;
-            $.each($(this).find('div[class^="col-"]'), function() {
-                if($(this).height() > maxh)
-                maxh=$(this).height();
-            });
-            $.each($(this).find('div[class^="col-"]'), function() {
-                $(this).height(maxh);
-            });
-        });
-    });
+   $("#divTest1").text("Hello World");
 {% endblock %}
+
+$(document).ready(function ()
+{
+var row=$('.logo');
+$.each(row, function() {
+var maxh=0;
+$.each($(this).find('div[class^="col-"]'), function() {
+if($(this).height() > maxh)
+maxh=$(this).height();
+});
+$.each($(this).find('div[class^="col-"]'), function() {
+$(this).height(maxh);
+});
+});
+});

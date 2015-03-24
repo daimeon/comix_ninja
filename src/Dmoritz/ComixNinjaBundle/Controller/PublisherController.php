@@ -11,6 +11,7 @@ use Dmoritz\ComixNinjaBundle\Entity\Publisher;
 use Dmoritz\ComixNinjaBundle\Service\PublisherServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Doctrine\ORM\EntityRepository;
 
 class PublisherController extends DefaultController
 {
@@ -63,15 +64,17 @@ class PublisherController extends DefaultController
             ->add('foundingYear', 'text')
             ->add('defunctYear', 'text')
             ->add('logo', 'text')
+            ->add('country', 'text')
             ->add('save', 'submit', array('label' => 'Create Publisher'))
         ->getForm();
 
         $form->handleRequest($request);
-        var_dump($request);
 
         if ($form->isValid())
         {
-
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($oPublisher);
+            $em->flush();
             return $this->redirectToRoute('task_success');
         }
 

@@ -50,13 +50,16 @@
     </nav>
 {% endblock %}
 {% block body %}
-    <div class="pull-right">
-        <div class="btn-group" role="group" aria-label="...">
-            <button type="button" class="btn btn-success">add</button>
-            <button type="button" class="btn btn-warning">edit</button>
-            <button type="button" class="btn btn-danger">delete</button>
+    <div class="row">
+        <div class="col-md-12 pull-right">
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-success">add</button>
+                <button type="button" class="btn btn-warning">edit</button>
+                <button type="button" class="btn btn-danger">delete</button>
+            </div>
         </div>
     </div>
+
     <div class="row">
         {% for oPublisher in aPublishers %}
             <div class="col-md-4">

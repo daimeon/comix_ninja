@@ -79,7 +79,7 @@
 
 {% block javascripts %}
     $( window ).resize(function() {
-    $( "#log" ).append( "<div>Handler for .resize() called.</div>" );
+    console.log("Handler for .resize() called." );
     });
 
    $(".logo").each(function(index) {

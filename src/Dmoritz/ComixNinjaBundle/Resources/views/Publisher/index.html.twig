@@ -78,6 +78,10 @@
 {% endblock %}
 
 {% block javascripts %}
+    $( window ).resize(function() {
+    $( "#log" ).append( "<div>Handler for .resize() called.</div>" );
+    });
+
    $(".logo").each(function(index) {
       console.log(index + ": " + $(this).height());
     });

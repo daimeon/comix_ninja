@@ -79,10 +79,10 @@
 
 {% block javascripts %}
     $( window ).resize(function() {
-    console.log("Handler for .resize() called." );
+        $(".logo").each(function(index) {
+        console.log(index + ": " + $(this).height());
+        });
     });
 
-   $(".logo").each(function(index) {
-      console.log(index + ": " + $(this).height());
-    });
+
 {% endblock %}

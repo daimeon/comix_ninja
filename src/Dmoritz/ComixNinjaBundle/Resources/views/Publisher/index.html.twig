@@ -78,5 +78,7 @@
 {% endblock %}
 
 {% block javascripts %}
-   $(".logo").css("border", "13px solid red");
+   $(".logo").each(function(index) {
+      console.log(index + ": " + $(this).height());
+    });
 {% endblock %}

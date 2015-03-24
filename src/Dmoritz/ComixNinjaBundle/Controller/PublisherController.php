@@ -62,7 +62,7 @@ class PublisherController extends DefaultController
         $form = $this->createFormBuilder($oPublisher)
             ->add('name', 'text')
             ->add('foundingYear', 'text')
-            ->add('defunctYear', 'text')
+            ->add('defunctYear', 'text', array('required' => false))
             ->add('logo', 'text')
             ->add('country', 'text')
             ->add('save', 'submit', array('label' => 'Create Publisher'))

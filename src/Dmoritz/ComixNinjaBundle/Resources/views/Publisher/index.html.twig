@@ -78,7 +78,8 @@
 {% endblock %}
 
 {% block javascripts %}
-    $( window ).resize(function() {
+    $(document).ready(function ()
+    {
 
         var row=$('.logo');
         $.each(row, function() {
@@ -87,7 +88,7 @@
                 if($(this).height() > maxh)
                 maxh=$(this).height();
             });
-    alert(maxh);
+
             $.each($(this).find('div[class^="col-"]'), function() {
                 $(this).height(maxh);
             });

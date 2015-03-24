@@ -48,4 +48,15 @@ class PublisherController extends DefaultController
         );
     }
 
+    /**
+     * @return mixed
+     */
+    public function addPublisherAction()
+    {
+        return $this->render(
+            'DmoritzComixNinjaBundle:Publisher:publisherForm.html.twig'
+
+        );
+    }
+
 }

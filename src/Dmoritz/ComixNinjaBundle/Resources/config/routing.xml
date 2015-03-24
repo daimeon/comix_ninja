@@ -13,4 +13,8 @@
         <requirement key="iPublisherId">\d+</requirement>
     </route>
 
+    <route id="addPublisher" path="/addPublisher">
+        <default key="_controller">DmoritzComixNinjaBundle:Publisher:addPublisher</default>
+    </route>
+
 </routes>

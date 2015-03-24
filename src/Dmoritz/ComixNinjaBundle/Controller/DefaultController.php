@@ -10,4 +10,14 @@ class DefaultController extends Controller
     {
         return $this->render('DmoritzComixNinjaBundle:Default:index.html.twig', array('name' => $name));
     }
+
+    /**
+     *
+     * @param $id
+     * @return mixed
+     */
+    public function get($id)
+    {
+        return $this->container->get($id);
+    }
 }

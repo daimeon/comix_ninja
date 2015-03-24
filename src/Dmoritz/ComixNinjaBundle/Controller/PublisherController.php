@@ -10,7 +10,7 @@ namespace Dmoritz\ComixNinjaBundle\Controller;
 use Dmoritz\ComixNinjaBundle\Service\PublisherServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class PublisherController extends Controller
+class PublisherController extends DefaultController
 {
     public function indexAction()
     {
@@ -47,14 +47,5 @@ class PublisherController extends Controller
 
         );
     }
-    /**
-     * @todo: move to parent class
-     *
-     * @param $id
-     * @return mixed
-     */
-    public function get($id)
-    {
-        return $this->container->get($id);
-    }
+
 }

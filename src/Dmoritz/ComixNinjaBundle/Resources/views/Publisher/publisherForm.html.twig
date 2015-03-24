@@ -50,40 +50,7 @@
     </nav>
 {% endblock %}
 {% block body %}
-    <div class="row">
-        <div class="col-md-12">
-            <div class="pull-right">
-                <div class="btn-group" role="group" aria-label="...">
-                    <a class="btn btn-success" href="{{ path('addPublisher') }}">add</a>
-                    <button type="button" class="btn btn-danger">delete</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        {% for oPublisher in aPublishers %}
-            <div class="col-md-4">
-                <div class="thumbnail">
-                    <div>
-                        <img src="/assets/img/logos/{{ oPublisher.logo }}" alt="{{ oPublisher.name }}" width="150" style="align-self: center">
-                    </div>
-                    <div class="caption">
-                        <h4>{{ oPublisher.name }}</h4>
-                        <p>
-                            <a href="publisherDetails/{{ oPublisher.id }}" class="btn btn-primary" role="button">Details</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            {% if loop.index is divisibleby(3) %}
-                </div>
-                <div class="clearfix visible-xs-block"></div>
-                <div class="row">
-
-            {% endif %}
-        {% endfor %}
-    </div>
+Add a new publisher
 {% endblock %}
 
 {% block javascripts %}

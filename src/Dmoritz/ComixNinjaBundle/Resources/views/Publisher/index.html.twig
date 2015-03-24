@@ -87,6 +87,7 @@
                 if($(this).height() > maxh)
                 maxh=$(this).height();
             });
+    alert(maxh);
             $.each($(this).find('div[class^="col-"]'), function() {
                 $(this).height(maxh);
             });

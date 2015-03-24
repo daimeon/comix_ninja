@@ -67,6 +67,7 @@ class PublisherController extends DefaultController
         ->getForm();
 
         $form->handleRequest($request);
+        var_dump($request);
 
         if ($form->isValid())
         {

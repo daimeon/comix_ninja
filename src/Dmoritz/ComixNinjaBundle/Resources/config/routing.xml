@@ -17,4 +17,16 @@
         <default key="_controller">DmoritzComixNinjaBundle:Publisher:addPublisher</default>
     </route>
 
+    <route id="deletePublisher" path="/deletePublisher/{iPublisherId}">
+        <default key="_controller">DmoritzComixNinjaBundle:Publisher:deletePublisher</default>
+        <requirement key="iPublisherId">\d+</requirement>
+    </route>
+
+    <route id="publisherSuccess" path="/publisherSuccess">
+        <default key="_controller">DmoritzComixNinjaBundle:Publisher:publisherSuccess</default>
+    </route>
+
+    <route id="impressum" path="/impressum">
+        <default key="_controller">DmoritzComixNinjaBundle:Impressum:index</default>
+    </route>
 </routes>

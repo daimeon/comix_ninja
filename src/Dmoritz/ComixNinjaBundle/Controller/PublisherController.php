@@ -52,6 +52,8 @@ class PublisherController extends DefaultController
     }
 
     /**
+     * add a new publisher. Form and success @todo add success
+     *
      * @return mixed
      */
     public function addPublisherAction(Request $request)
@@ -75,9 +77,8 @@ class PublisherController extends DefaultController
             $em = $this->getDoctrine()->getManager();
             $em->persist($oPublisher);
             $em->flush();
-            return $this->redirectToRoute('task_success');
+            return $this->redirectToRoute('publisher_success', array('aMessage' => 'deleted'));
         }
-
 
         return $this->render(
             'DmoritzComixNinjaBundle:Publisher:publisherForm.html.twig',
@@ -87,4 +88,25 @@ class PublisherController extends DefaultController
         );
     }
 
+    /**
+     * @param $iPublisherId
+     * @return mixed
+     */
+    public function deletePublisher($iPublisherId)
+    {
+        $em = $this->getDoctrine()->getManager();
+        /** @var PublisherServiceInterface $_oPublisherService */
+        $_oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);
+        $_oPublisher = $_oPublisherService->getPublisherById($iPublisherId);
+        $em->remove($_oPublisher);
+        $em->flush();
+
+
+        return $this->render(
+            'DmoritzComixNinjaBundle:Publisher:success.html.twig',
+            array(
+                'sMessage' => 'Publisher deleted'
+            )
+        );
+    }
 }

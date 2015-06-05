@@ -29,4 +29,8 @@
     <route id="impressum" path="/impressum">
         <default key="_controller">DmoritzComixNinjaBundle:Impressum:index</default>
     </route>
+
+    <route id="vintageCollection" path="/vintageCollection">
+        <default key="_controller">DmoritzComixNinjaBundle:VintageCollection:index</default>
+    </route>
 </routes>

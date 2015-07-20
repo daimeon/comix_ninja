@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
             new Dmoritz\ComixNinjaBundle\DmoritzComixNinjaBundle(),
+	    new Dmoritz\ComixNinjaApiBundle\DmoritzComixNinjaApiBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

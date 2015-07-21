@@ -47,8 +47,12 @@ class ApiController extends Controller
         {
             $_aData = json_decode($oRequest->getContent(), true);
             $_oPublisher = new Publisher();
+            $_oPublisher->setName($_aData['name']);
+            $_oPublisher->setFoundingYear($_aData['foundingYear']);
+            $_oPublisher->setDefunctYear($_aData['defunctYear']);
             $_oPublisher->setCountry($_aData['country']);
 
+            var_dump($_oPublisher);
             $_response = new Response('It worked, trust me', 201);
 
             return $_response;

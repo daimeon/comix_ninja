@@ -41,7 +41,7 @@ class ApiController extends Controller implements \JsonSerializable
             /** @var PublisherServiceInterface $_oPublisherService */
             $_oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);
             $_aPublishers = $_oPublisherService->getPublishers();
-            $_obj = (object) get_object_vars($_aPublishers[0]);
+            $_obj = ((array) $_aPublishers[0]);
             var_dump($_obj);
             var_dump($_aPublishers);die;
             return new Response(json_encode($_aPublishers), 200);

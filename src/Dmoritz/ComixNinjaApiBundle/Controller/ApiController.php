@@ -29,6 +29,7 @@ class ApiController extends Controller
             /** @var PublisherServiceInterface $_oPublisherService */
             $_oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);
             $_aPublishers = $_oPublisherService->getPublishers();
+            var_dump($_aPublishers);die;
             $_aPublisherArrays = array();
             foreach ($_aPublishers as $_oPublisher)
             {

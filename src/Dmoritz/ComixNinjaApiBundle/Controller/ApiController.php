@@ -33,7 +33,6 @@ class ApiController extends Controller
         $_aPublishers = $_oPublisherService->getPublishers();
 
         $data = $request->getContent();
-        var_dump($request['REQUEST_METHOD']);
         var_dump($request);
         var_dump($data);die;
 

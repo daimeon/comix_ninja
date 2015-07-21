@@ -35,14 +35,10 @@ class ApiController extends Controller
         $_oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);
         $_aPublishers = $_oPublisherService->getPublishers();
 
+        var_dump($_aPublishers);die;
         if ($oRequest->isMethod('GET'))
         {
-            return $this->render(
-                'DmoritzComixNinjaApiBundle:Default:publishers.json.twig',
-                array(
-                    'aPublishers' => $_aPublishers
-                )
-            );
+            return new Response(json_encode($_aData), 200);
         }
         else if($oRequest->isMethod('POST'))
         {

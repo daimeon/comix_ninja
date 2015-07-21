@@ -32,17 +32,24 @@ class ApiController extends Controller
         $_oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);
         $_aPublishers = $_oPublisherService->getPublishers();
 
-        $data = $request->getContent();
-        var_dump($request->isMethod('GET'));
-        var_dump($request->isMethod('POST'));
-        var_dump($request);
-        var_dump($data);die;
+        if ($request->isMethod('GET'))
+        {
+            return $this->render(
+                'DmoritzComixNinjaBundle:Publisher:index.html.twig',
+                array(
+                    'aPublishers' => $_aPublishers
+                )
+            );
+        }
+        else if($request->isMethod('POST'))
+        {
+            return $this->render('DmoritzComixNinjaApiBundle:Default:unsupported.html.twig');
+        }
+        else
+        {
+            return $this->render('DmoritzComixNinjaApiBundle:Default:unsupported.html.twig');
+        }
 
-        return $this->render(
-            'DmoritzComixNinjaBundle:Publisher:index.html.twig',
-            array(
-                'aPublishers' => $_aPublishers
-            )
-        );
+
     }
 }

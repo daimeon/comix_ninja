@@ -29,7 +29,10 @@ class ApiController extends Controller
             /** @var PublisherServiceInterface $_oPublisherService */
             $_oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);
             $_aPublishers = $_oPublisherService->getPublishers();
-            return new Response(json_encode($_aPublishers), 200);
+
+            $response = new Response(json_encode($_aPublishers), 200);
+            $response->headers->set('Content-Type', 'application/json');
+            return $response;
         }
         else if($oRequest->isMethod('POST'))
         {

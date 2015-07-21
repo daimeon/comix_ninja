@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Doctrine\ORM\EntityRepository;
 
-class ApiController extends Controller
+class ApiController extends Controller implements JsonSerializable
 {
     public function indexAction($name)
     {
@@ -36,6 +36,7 @@ class ApiController extends Controller
             /** @var PublisherServiceInterface $_oPublisherService */
             $_oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);
             $_aPublishers = $_oPublisherService->getPublishers();
+            $_obj = (object) get_object_vars($_aPublishers[0]);
             var_dump($_aPublishers);die;
             return new Response(json_encode($_aPublishers), 200);
         }

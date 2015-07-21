@@ -17,11 +17,11 @@ use Doctrine\ORM\EntityRepository;
 
 class ApiController extends Controller
 {
-    public function indexAction($name)
-    {
-        return $this->render('DmoritzComixNinjaApiBundle:Default:index.html.twig', array('name' => $name));
-    }
 
+    /**
+     * @param Request $oRequest
+     * @return Response
+     */
     public function publisherAction(Request $oRequest)
     {
         if ($oRequest->isMethod('GET'))
@@ -53,9 +53,8 @@ class ApiController extends Controller
         }
         else
         {
-            return $this->render('DmoritzComixNinjaApiBundle:Default:unsupported.html.twig');
+            return new Response('Method not supported', 404);
         }
-
 
     }
 }

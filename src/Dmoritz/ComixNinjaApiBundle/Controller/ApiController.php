@@ -18,7 +18,7 @@ class ApiController extends Controller
         return $this->render('DmoritzComixNinjaApiBundle:Default:index.html.twig', array('name' => $name));
     }
 
-    public function handleRequest(Request $request)
+    public function handleRequestAction(Request $request)
     {
         $data = $request->getContent();
         return $data;

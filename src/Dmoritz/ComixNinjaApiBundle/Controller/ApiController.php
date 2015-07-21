@@ -13,6 +13,7 @@ use Dmoritz\ComixNinjaBundle\Service\PublisherServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Doctrine\ORM\EntityRepository;
 
 class ApiController extends Controller
 {
@@ -52,7 +53,10 @@ class ApiController extends Controller
             $_oPublisher->setDefunctYear($_aData['defunctYear']);
             $_oPublisher->setCountry($_aData['country']);
 
-            var_dump($_oPublisher);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($_oPublisher);
+            $em->flush();
+
             $_response = new Response('It worked, trust me', 201);
 
             return $_response;

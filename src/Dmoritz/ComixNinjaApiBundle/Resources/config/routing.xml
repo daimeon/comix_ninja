@@ -11,4 +11,8 @@
     <route id="dmoritz_comix_ninja_api_api" path="/api/{name}">
         <default key="_controller">DmoritzComixNinjaApiBundle:Api:handleRequest</default>
     </route>
+
+    <route id="dmoritz_comix_ninja_api_api" path="/api/publishers">
+        <default key="_controller">DmoritzComixNinjaApiBundle:Api:publishers</default>
+    </route>
 </routes>

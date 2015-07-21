@@ -8,6 +8,7 @@
 
 namespace Dmoritz\ComixNinjaApiBundle\Controller;
 
+use Dmoritz\ComixNinjaBundle\Service\PublisherServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -21,6 +22,21 @@ class ApiController extends Controller
     public function handleRequestAction(Request $request)
     {
         $data = $request->getContent();
+        var_dump($request);
         var_dump($data);die;
+    }
+
+    public function publishersAction(Request $request)
+    {
+        /** @var PublisherServiceInterface $_oPublisherService */
+        $_oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);
+        $_aPublishers = $_oPublisherService->getPublishers();
+
+        return $this->render(
+            'DmoritzComixNinjaBundle:Publisher:index.html.twig',
+            array(
+                'aPublishers' => $_aPublishers
+            )
+        );
     }
 }

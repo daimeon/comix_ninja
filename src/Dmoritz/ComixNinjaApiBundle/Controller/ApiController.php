@@ -37,7 +37,7 @@ class ApiController extends Controller
         if ($oRequest->isMethod('GET'))
         {
             return $this->render(
-                'DmoritzComixNinjaApiBundle:Publisher:publishers.json.twig',
+                'DmoritzComixNinjaApiBundle:Default:publishers.json.twig',
                 array(
                     'aPublishers' => $_aPublishers
                 )

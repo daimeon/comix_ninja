@@ -21,6 +21,6 @@ class ApiController extends Controller
     public function handleRequestAction(Request $request)
     {
         $data = $request->getContent();
-        return $data;
+        var_dump($data);die;
     }
 }

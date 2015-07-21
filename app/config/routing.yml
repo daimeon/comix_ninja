@@ -1,3 +1,7 @@
+dmoritz_comix_ninja_api:
+    resource: "@DmoritzComixNinjaApiBundle/Resources/config/routing.xml"
+    prefix:   /
+
 dmoritz_comix_ninja:
     resource: "@DmoritzComixNinjaBundle/Resources/config/routing.xml"
     prefix:   /

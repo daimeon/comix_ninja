@@ -34,7 +34,6 @@ class ApiController extends Controller
             {
                 $_aPublisherArrays[] = (array) $_oPublisher;
             }
-            var_dump($_aPublisherArrays);die;
             return new Response(json_encode($_aPublishers), 200);
         }
         else if($oRequest->isMethod('POST'))

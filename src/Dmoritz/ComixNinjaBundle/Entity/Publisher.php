@@ -12,32 +12,32 @@ class Publisher
     /**
      * @var integer
      */
-    private $id;
+    public $id;
 
     /**
      * @var string
      */
-    private $name;
+    public $name;
 
     /**
      * @var integer
      */
-    private $foundingYear;
+    public $foundingYear;
 
     /**
      * @var integer
      */
-    private $defunctYear;
+    public $defunctYear;
 
     /**
      * @var string
      */
-    private $country;
+    public $country;
 
     /**
      * @var string
      */
-    private $logo;
+    public $logo;
 
 
     /**

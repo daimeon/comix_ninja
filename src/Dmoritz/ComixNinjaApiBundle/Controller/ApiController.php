@@ -15,23 +15,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Doctrine\ORM\EntityRepository;
 
-class ApiController extends Controller implements \JsonSerializable
+class ApiController extends Controller
 {
     public function indexAction($name)
     {
         return $this->render('DmoritzComixNinjaApiBundle:Default:index.html.twig', array('name' => $name));
-    }
-
-    public function handleRequestAction(Request $oRequest)
-    {
-        $data = $oRequest->getContent();
-        var_dump($oRequest);
-        var_dump($data);die;
-    }
-
-    public function jsonSerialize() {
-
-    return (object) get_object_vars($this);
     }
 
     public function publisherAction(Request $oRequest)
@@ -41,9 +29,12 @@ class ApiController extends Controller implements \JsonSerializable
             /** @var PublisherServiceInterface $_oPublisherService */
             $_oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);
             $_aPublishers = $_oPublisherService->getPublishers();
-            $_obj = ((array) $_aPublishers[0]);
-            var_dump($_obj);
-            var_dump($_aPublishers);die;
+            $_aPublisherArrays = array();
+            foreach ($_aPublishers as $_oPublisher)
+            {
+                $_aPublisherArrays[] = (array) $_oPublisher;
+            }
+            var_dump($_aPublisherArrays);die;
             return new Response(json_encode($_aPublishers), 200);
         }
         else if($oRequest->isMethod('POST'))

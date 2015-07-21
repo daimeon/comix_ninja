@@ -29,7 +29,7 @@ class ApiController extends Controller
         var_dump($data);die;
     }
 
-    public function publishersAction(Request $oRequest)
+    public function publisherAction(Request $oRequest)
     {
         /** @var PublisherServiceInterface $_oPublisherService */
         $_oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);

@@ -9,11 +9,18 @@
 namespace Dmoritz\ComixNinjaApiBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class ApiController extends Controller
 {
     public function indexAction($name)
     {
         return $this->render('DmoritzComixNinjaApiBundle:Default:index.html.twig', array('name' => $name));
+    }
+
+    public function handleRequest(Request $request)
+    {
+        $data = $request->getContent();
+        return $data;
     }
 }

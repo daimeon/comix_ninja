@@ -8,6 +8,7 @@
 
 namespace Dmoritz\ComixNinjaApiBundle\Controller;
 
+use Dmoritz\ComixNinjaBundle\Entity\Publisher;
 use Dmoritz\ComixNinjaBundle\Service\PublisherServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -44,7 +45,10 @@ class ApiController extends Controller
         }
         else if($oRequest->isMethod('POST'))
         {
-            $_data = $oRequest->getContent();
+            $_aData = json_decode($oRequest->getContent(), true);
+            $_oPublisher = new Publisher();
+            $_oPublisher->setCountry($_aData['country']);
+
             $_response = new Response('It worked, trust me', 201);
 
             return $_response;

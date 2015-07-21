@@ -46,6 +46,8 @@ class ApiController extends Controller
         {
             $_data = $oRequest->getContent();
             $_response = new Response('It worked, trust me', 201);
+
+            return $_response;
         }
         else
         {

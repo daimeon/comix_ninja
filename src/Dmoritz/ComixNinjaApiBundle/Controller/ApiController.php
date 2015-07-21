@@ -32,6 +32,10 @@ class ApiController extends Controller
         $_oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);
         $_aPublishers = $_oPublisherService->getPublishers();
 
+        $data = $request->getContent();
+        var_dump($request);
+        var_dump($data);die;
+
         return $this->render(
             'DmoritzComixNinjaBundle:Publisher:index.html.twig',
             array(

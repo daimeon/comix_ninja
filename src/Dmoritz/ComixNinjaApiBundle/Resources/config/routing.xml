@@ -13,6 +13,6 @@
     </route>
 
     <route id="dmoritz_comix_ninja_api_api" path="/api/publisher">
-        <default key="_controller">DmoritzComixNinjaApiBundle:Api:publishers</default>
+        <default key="_controller">DmoritzComixNinjaApiBundle:Api:publisher</default>
     </route>
 </routes>

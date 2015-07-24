@@ -11,17 +11,17 @@ use Doctrine\ORM\Mapping as ORM;
 class Series
 {
 	/**
-	 * @ORM\Column(type="integer")
+	 * @var integer
 	 */
 	public $series_id;
 	
 	/**
-	 * @ORM\Column(type="string", length=255)
+	 * @var string
 	 */
 	public $title;
 	
 	/**
-	 * @ORM\Column(type="integer")
+	 * @var integer
 	 */
 	public $publisher_id;
 }

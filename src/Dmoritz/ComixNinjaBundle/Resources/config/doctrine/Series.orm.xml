@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
     <entity name="Dmoritz\ComixNinjaBundle\Entity\Series">
-        <id name="id" type="integer" column="id">
-            <generator strategy="AUTO"/>
-        </id>
-        <field name="name" type="string" column="name" length="255"/>
-        <field name="foundingYear" type="integer" column="foundingYear"/>
-        <field name="defunctYear" type="integer" column="defunctYear" nullable="true"/>
-        <field name="country" type="string" column="country" length="3"/>
-        <field name="logo" type="string" column="logo" length="100" nullable="true"/>
+        <field name="series_id" type="integer" column="series_id"/>
+        <field name="title" type="string" column="title" length="255"/>
+        <field name="publisher_id" type="integer" column="publisher_id"/>
     </entity>
 </doctrine-mapping>

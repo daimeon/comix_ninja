@@ -10,6 +10,8 @@ namespace Dmoritz\ComixNinjaBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Dmoritz\ComixNinjaBundle\Entity\Publisher;
+
 
 class addPublisherController extends DefaultController
 {

@@ -8,7 +8,6 @@
 
 namespace Dmoritz\ComixNinjaBundle\Controller;
 
-use AppBundle\Controller\DefaultController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 

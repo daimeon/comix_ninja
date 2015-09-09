@@ -8,9 +8,10 @@
 
 namespace Dmoritz\ComixNinjaBundle\Controller;
 
+use Dmoritz\ComixNinjaBundle\Entity\Publisher;
+use Dmoritz\ComixNinjaBundle\Service\PublisherServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Dmoritz\ComixNinjaBundle\Entity\Publisher;
 use Doctrine\ORM\EntityRepository;
 
 

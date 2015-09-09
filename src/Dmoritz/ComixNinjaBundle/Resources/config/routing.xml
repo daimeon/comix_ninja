@@ -33,4 +33,8 @@
     <route id="vintageCollection" path="/vintageCollection">
         <default key="_controller">DmoritzComixNinjaBundle:VintageCollection:index</default>
     </route>
+
+    <route id="addPublisher" path="/addPublisher">
+        <default key="_controller">DmoritzComixNinjaBundle:addPublisher:index</default>
+    </route>
 </routes>

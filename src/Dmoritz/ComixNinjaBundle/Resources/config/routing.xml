@@ -13,6 +13,10 @@
         <requirement key="iPublisherId">\d+</requirement>
     </route>
 
+    <route id="addPublisher" path="/addPublisher">
+        <default key="_controller">DmoritzComixNinjaBundle:Publisher:addPublisher</default>
+    </route>
+
     <route id="deletePublisher" path="/deletePublisher/{iPublisherId}">
         <default key="_controller">DmoritzComixNinjaBundle:Publisher:deletePublisher</default>
         <requirement key="iPublisherId">\d+</requirement>
@@ -30,7 +34,4 @@
         <default key="_controller">DmoritzComixNinjaBundle:VintageCollection:index</default>
     </route>
 
-    <route id="addPublisher" path="/addPublisher">
-        <default key="_controller">DmoritzComixNinjaBundle:addPublisher:index</default>
-    </route>
 </routes>

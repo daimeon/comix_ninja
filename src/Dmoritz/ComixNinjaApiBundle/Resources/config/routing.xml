@@ -4,11 +4,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
 
-    <route id="dmoritz_comix_ninja_api_api" path="/api/publisher">
+    <route id="dmoritz_comix_ninja_api_publisher" path="/api/publisher">
         <default key="_controller">DmoritzComixNinjaApiBundle:Api:publisher</default>
     </route>
 
-    <route id="dmoritz_comix_ninja_api_api" path="/api/series">
+    <route id="dmoritz_comix_ninja_api_series" path="/api/series">
         <default key="_controller">DmoritzComixNinjaApiBundle:Api:series</default>
     </route>
 

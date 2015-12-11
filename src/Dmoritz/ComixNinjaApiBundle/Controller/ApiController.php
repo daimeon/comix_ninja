@@ -68,7 +68,7 @@ class ApiController extends Controller
 
     public function seriesAction(Request $oRequest)
     {
-        if ($oRequest->isMehod('GET'))
+        if ($oRequest->isMethod('GET'))
         {
             /** @var SeriesServiceInterface $_oSeriesService */
             $_oSeriesService = $this->get(SeriesServiceInterface::DIC_NAME);

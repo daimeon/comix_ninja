@@ -2,17 +2,16 @@
 /**
  * Created by PhpStorm.
  * User: dmoritz
- * Date: 11.12.2015
- * Time: 12:53
+ * Date: 11.12.15
+ * Time: 15:21
  */
 
 namespace Dmoritz\ComixNinjaBundle\Service;
 
 use Doctrine\ORM\EntityManager;
 
-class SeriesService
+class ComicsService
 {
-
     private $entityManager;
 
     /**
@@ -24,24 +23,25 @@ class SeriesService
     }
 
     /**
-     * Get all
+     * General method of getting all comics, ordered by title
+     * #nothing fancy here
      *
      * @return null
      */
-    public function getSeries()
+    public function getComics()
     {
         $_repository = $this
             ->entityManager
-            ->getRepository('Dmoritz\ComixNinjaBundle\Entity\Series');
+            ->getRepository('Dmoritz\ComixNinjaBundle\Entity\Comics');
 
-        $_sQuery = $_repository->createQueryBuilder('s')
-            ->orderBy('s.title', 'ASC')
+        $_sQuery = $_repository->createQueryBuilder('c')
+            ->orderBy('c.title', 'ASC')
             ->getQuery();
-        $_aSeries = $_sQuery->getResult();
-        if (!$_aSeries)
+        $_aComics = $_sQuery->getResult();
+        if(!$_aComics)
         {
             return null;
         }
-        return $_aSeries;
+        return $_aComics;
     }
 }

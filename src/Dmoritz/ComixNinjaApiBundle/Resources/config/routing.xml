@@ -12,4 +12,8 @@
         <default key="_controller">DmoritzComixNinjaApiBundle:Api:series</default>
     </route>
 
+    <route id="dmoritz_comix_ninja_api_comics" path="/api/comics">
+        <default key="_controller">DmoritzComixNinjaApiBundle:Api:comics</default>
+    </route>
+
 </routes>

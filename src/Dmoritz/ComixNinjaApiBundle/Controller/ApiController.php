@@ -67,6 +67,10 @@ class ApiController extends Controller
 
     }
 
+    /**
+     * @param Request $oRequest
+     * @return Response
+     */
     public function seriesAction(Request $oRequest)
     {
         if ($oRequest->isMethod('GET'))
@@ -93,5 +97,52 @@ class ApiController extends Controller
 
             return $_response;
         }
+    }
+
+    /**
+     * @param Request $oRequest
+     * @return Response
+     */
+    public function comicsAction(Request $oRequest)
+    {
+        if ($oRequest->isMethod('GET'))
+        {
+            /** @var PublisherServiceInterface $_oPublisherService */
+            $_oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);
+            $_aPublishers = $_oPublisherService->getPublishers();
+
+            $response = new Response(json_encode($_aPublishers), 200);
+            $response->headers->set('Content-Type', 'application/json');
+            return $response;
+        }
+        else if($oRequest->isMethod('POST'))
+        {
+            $_aData = json_decode($oRequest->getContent(), true);
+            $_oPublisher = new Publisher();
+            $_oPublisher->setName($_aData['name']);
+            $_oPublisher->setFoundingYear($_aData['foundingYear']);
+            if (array_key_exists('defunctYear', $_aData))
+            {
+                $_oPublisher->setDefunctYear($_aData['defunctYear']);
+            }
+            else
+            {
+                $_oPublisher->setDefunctYear(null);
+            }
+            $_oPublisher->setCountry($_aData['country']);
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($_oPublisher);
+            $em->flush();
+
+            $_response = new Response('It worked, trust me', 201);
+
+            return $_response;
+        }
+        else
+        {
+            return new Response('Method not supported', 404);
+        }
+
     }
 }

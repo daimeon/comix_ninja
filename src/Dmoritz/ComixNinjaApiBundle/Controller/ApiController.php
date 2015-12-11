@@ -10,6 +10,7 @@ namespace Dmoritz\ComixNinjaApiBundle\Controller;
 
 use Dmoritz\ComixNinjaBundle\Entity\Publisher;
 use Dmoritz\ComixNinjaBundle\Service\PublisherServiceInterface;
+use Dmoritz\ComixNinjaBundle\Service\SeriesServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -69,7 +70,13 @@ class ApiController extends Controller
     {
         if ($oRequest->isMehod('GET'))
         {
+            /** @var SeriesServiceInterface $_oSeriesService */
+            $_oSeriesService = $this->get(SeriesServiceInterface::DIC_NAME);
+            $_aSeries = $_oSeriesService->getSeries();
 
+            $response = new Response(json_encode($_aSeries), 200);
+            $response->headers->set('Content-Type', 'application/json');
+            return $response;
         }
         else
         {

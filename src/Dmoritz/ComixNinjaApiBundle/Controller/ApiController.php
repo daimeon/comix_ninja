@@ -110,7 +110,7 @@ class ApiController extends Controller
         {
             /** @var ComicsServiceInterface $_oComicsService */
             $_oComicsService = $this->get(ComicsServiceInterface::DIC_NAME);
-            $_aComics = $_oComicsService->getPublishers();
+            $_aComics = $_oComicsService->getComics();
 
             $response = new Response(json_encode($_aComics), 200);
             $response->headers->set('Content-Type', 'application/json');

@@ -10,5 +10,10 @@
             <argument type="service" id="doctrine.orm.entity_manager" />
         </service>
 
+        <service id="ComixNinja.SeriesServiceInterface"
+                 class="Dmoritz\ComixNinjaBundle\Service\SeriesService">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+        </service>
+
     </services>
 </container>

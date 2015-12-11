@@ -40,7 +40,14 @@ class ApiController extends Controller
             $_oPublisher = new Publisher();
             $_oPublisher->setName($_aData['name']);
             $_oPublisher->setFoundingYear($_aData['foundingYear']);
-            $_oPublisher->setDefunctYear($_aData['defunctYear']);
+            if (array_key_exists('defunctYear', $_aData))
+            {
+                $_oPublisher->setDefunctYear($_aData['defunctYear']);
+            }
+            else
+            {
+                $_oPublisher->setDefunctYear(null);
+            }
             $_oPublisher->setCountry($_aData['country']);
 
             $em = $this->getDoctrine()->getManager();
@@ -56,5 +63,17 @@ class ApiController extends Controller
             return new Response('Method not supported', 404);
         }
 
+    }
+
+    public function seriesAction(Request $oRequest)
+    {
+        if ($oRequest->isMehod('GET'))
+        {
+
+        }
+        else
+        {
+            return new Response('Method not supported (yet)', 404);
+        }
     }
 }

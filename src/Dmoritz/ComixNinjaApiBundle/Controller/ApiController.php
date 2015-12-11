@@ -9,6 +9,7 @@
 namespace Dmoritz\ComixNinjaApiBundle\Controller;
 
 use Dmoritz\ComixNinjaBundle\Entity\Publisher;
+use Dmoritz\ComixNinjaBundle\Entity\Series;
 use Dmoritz\ComixNinjaBundle\Service\PublisherServiceInterface;
 use Dmoritz\ComixNinjaBundle\Service\SeriesServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -80,7 +81,17 @@ class ApiController extends Controller
         }
         else
         {
-            return new Response('Method not supported (yet)', 404);
+            $_aData = json_decode($oRequest->getContent(), true);
+            $_oSeries = new Series();
+            $_oSeries->setTitle($_aData['title']);
+            $_oSeries->setPublisherId($_aData['publisherId']);
+            $em = $this->getDoctrine()->getManager();
+            $em->persis($_oSeries);
+            $em->flush();
+
+            $_response = new Response('It worked, trust me', 201);
+
+            return $_response;
         }
     }
 }

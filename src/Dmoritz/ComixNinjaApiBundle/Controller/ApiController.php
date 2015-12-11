@@ -86,7 +86,7 @@ class ApiController extends Controller
             $_oSeries->setTitle($_aData['title']);
             $_oSeries->setPublisherId($_aData['publisherId']);
             $em = $this->getDoctrine()->getManager();
-            $em->persis($_oSeries);
+            $em->persist($_oSeries);
             $em->flush();
 
             $_response = new Response('It worked, trust me', 201);

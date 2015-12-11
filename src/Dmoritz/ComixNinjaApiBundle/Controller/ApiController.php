@@ -10,6 +10,7 @@ namespace Dmoritz\ComixNinjaApiBundle\Controller;
 
 use Dmoritz\ComixNinjaBundle\Entity\Publisher;
 use Dmoritz\ComixNinjaBundle\Entity\Series;
+use Dmoritz\ComixNinjaBundle\Service\ComicsServiceInterface;
 use Dmoritz\ComixNinjaBundle\Service\PublisherServiceInterface;
 use Dmoritz\ComixNinjaBundle\Service\SeriesServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -107,35 +108,19 @@ class ApiController extends Controller
     {
         if ($oRequest->isMethod('GET'))
         {
-            /** @var PublisherServiceInterface $_oPublisherService */
-            $_oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);
-            $_aPublishers = $_oPublisherService->getPublishers();
+            /** @var ComicsServiceInterface $_oComicsService */
+            $_oComicsService = $this->get(ComicsServiceInterface::DIC_NAME);
+            $_aComics = $_oComicsService->getPublishers();
 
-            $response = new Response(json_encode($_aPublishers), 200);
+            $response = new Response(json_encode($_aComics), 200);
             $response->headers->set('Content-Type', 'application/json');
             return $response;
         }
         else if($oRequest->isMethod('POST'))
         {
-            $_aData = json_decode($oRequest->getContent(), true);
-            $_oPublisher = new Publisher();
-            $_oPublisher->setName($_aData['name']);
-            $_oPublisher->setFoundingYear($_aData['foundingYear']);
-            if (array_key_exists('defunctYear', $_aData))
-            {
-                $_oPublisher->setDefunctYear($_aData['defunctYear']);
-            }
-            else
-            {
-                $_oPublisher->setDefunctYear(null);
-            }
-            $_oPublisher->setCountry($_aData['country']);
 
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($_oPublisher);
-            $em->flush();
 
-            $_response = new Response('It worked, trust me', 201);
+            $_response = new Response('Not supported yet', 404);
 
             return $_response;
         }

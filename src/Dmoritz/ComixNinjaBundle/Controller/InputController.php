@@ -31,6 +31,15 @@ class InputController extends DefaultController
             ->add('save', 'submit', array('label' => 'Create Publisher'))
             ->getForm();
 
+        $oForm->handleRequest($request);
+
+        if ($form->isValid())
+        {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($_oPublisher);
+            $em->flush();
+            return $this->redirectToRoute('publisher_success', array('aMessage' => 'created'));
+        }
 
         return $this->render(
             'DmoritzComixNinjaBundle:Publisher:inputForm.html.twig',

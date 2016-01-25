@@ -20,12 +20,20 @@ class InputController extends DefaultController
         /** @var PublisherServiceInterface $_oPublisherService */
         $_oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);
         $_aPublishers = $_oPublisherService->getPublishers();
-        var_dump($_aPublishers);
+
+        $_oPublisher = new Publisher();
+        $oForm = $this->createFormBuilder($_oPublisher)
+            ->add('name', TextType::class)
+            ->add('country', DateType::class)
+            ->add('save', SubmitType::class, array('label' => 'Create Task'))
+            ->getForm();
+
 
         return $this->render(
             'DmoritzComixNinjaBundle:Publisher:inputForm.html.twig',
             array(
                 'aPublishers' => $_aPublishers,
+                'form' => $oForm
             )
         );
     }

@@ -33,7 +33,7 @@ class InputController extends DefaultController
 
         $oForm->handleRequest($request);
 
-        if ($form->isValid())
+        if ($oForm->isValid())
         {
             $em = $this->getDoctrine()->getManager();
             $em->persist($_oPublisher);

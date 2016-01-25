@@ -23,9 +23,12 @@ class InputController extends DefaultController
 
         $_oPublisher = new Publisher();
         $oForm = $this->createFormBuilder($_oPublisher)
-            ->add('name', TextType::class)
-            ->add('country', DateType::class)
-            ->add('save', SubmitType::class, array('label' => 'Create Task'))
+            ->add('name', 'text')
+            ->add('foundingYear', 'text')
+            ->add('defunctYear', 'text', array('required' => false))
+            ->add('logo', 'text')
+            ->add('country', 'text')
+            ->add('save', 'submit', array('label' => 'Create Publisher'))
             ->getForm();
 
 

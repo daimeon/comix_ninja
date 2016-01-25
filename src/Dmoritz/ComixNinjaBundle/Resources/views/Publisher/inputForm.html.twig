@@ -1,7 +1,15 @@
 {%  extends '::base.html.twig' %}
 {% block body %}
-    Add a new publisher
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    {{ form_end(form) }}
+    <p>
+        <h3>Add a new publisher</h3>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </p>
+    <p>
+        <h3>Add new comic</h3>
+        {{ form_start(comic_form) }}
+        {{ form_widget(comic_form) }}
+        {{ form_end(comic_form) }}
+    </p>
 {% endblock %}

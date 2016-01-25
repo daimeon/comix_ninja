@@ -7,6 +7,7 @@
  */
 namespace Dmoritz\ComixNinjaBundle\Controller;
 
+use Dmoritz\ComixNinjaBundle\Entity\Comics;
 use Dmoritz\ComixNinjaBundle\Entity\Publisher;
 use Dmoritz\ComixNinjaBundle\Service\PublisherServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -17,6 +18,10 @@ class InputController extends DefaultController
 {
     public function indexAction(Request $request)
     {
+        /** @var PublisherServiceInterface $_oPublisherService */
+        $_oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);
+        $_aPublishers = $_oPublisherService->getPublishers();
+
         $_oPublisher = new Publisher();
         $oForm = $this->createFormBuilder($_oPublisher)
             ->add('name', 'text')
@@ -29,6 +34,16 @@ class InputController extends DefaultController
 
         $oForm->handleRequest($request);
 
+
+        $_oComic = new Comics();
+        $_oComicForm = $this->createFormBuilder($_oComic)
+            ->add('isbn', 'text')
+            ->add('title', 'text')
+            ->add('save', 'submit', array('label' => 'Create Comic'))
+            ->getForm();
+
+        $_oComicForm->handleRequest($request);
+
         if ($oForm->isValid())
         {
             $em = $this->getDoctrine()->getManager();
@@ -40,7 +55,9 @@ class InputController extends DefaultController
         return $this->render(
             'DmoritzComixNinjaBundle:Publisher:inputForm.html.twig',
             array(
-                'form' => $oForm->createView()
+                'aPublishers' => $_aPublishers,
+                'form' => $oForm->createView(),
+                'comic_form' => $_oComicForm->createView()
             )
         );
     }

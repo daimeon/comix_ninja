@@ -43,7 +43,8 @@ class InputController extends DefaultController
         return $this->render(
             'DmoritzComixNinjaBundle:Publisher:publisherForm.html.twig',
             array(
-                'aPublishers' => $_aPublishers
+                'aPublishers' => $_aPublishers,
+                'form' => $form
             )
         );
     }

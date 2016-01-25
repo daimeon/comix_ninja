@@ -32,13 +32,13 @@ class InputController extends DefaultController
 
         $form->handleRequest($request);
 
-        if ($form->isValid())
+        /*if ($form->isValid())
         {
             $em = $this->getDoctrine()->getManager();
             $em->persist($oPublisher);
             $em->flush();
             return $this->redirectToRoute('publisher_success', array('aMessage' => 'deleted'));
-        }
+        }*/
 
         return $this->render(
             'DmoritzComixNinjaBundle:Publisher:publisherForm.html.twig',

@@ -38,4 +38,8 @@
         <default key="_controller">DmoritzComixNinjaBundle:Input:index</default>
     </route>
 
+    <rout id="publisher_success" path="/success">
+        <default key="_controller">DmoritzComixNinjaBundle:Publisher:success</default>
+    </rout>
+
 </routes>

@@ -109,4 +109,17 @@ class PublisherController extends DefaultController
             )
         );
     }
+
+    /**
+     * @return mixed
+     */
+    public function successAction()
+    {
+        return $this->render(
+            'DmoritzComixNinjaBundle:Publisher:success.html.twig',
+            array(
+                'sMessage' => 'Publisher created'
+            )
+        )
+    }
 }

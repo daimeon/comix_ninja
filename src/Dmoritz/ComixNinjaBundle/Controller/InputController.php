@@ -15,7 +15,7 @@ use Doctrine\ORM\EntityRepository;
 
 class InputController extends DefaultController
 {
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         /** @var PublisherServiceInterface $_oPublisherService */
         $_oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);

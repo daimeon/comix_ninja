@@ -36,7 +36,7 @@ class InputController extends DefaultController
             'DmoritzComixNinjaBundle:Publisher:inputForm.html.twig',
             array(
                 'aPublishers' => $_aPublishers,
-                'form' => $oForm
+                'form' => $oForm->createView()
             )
         );
     }

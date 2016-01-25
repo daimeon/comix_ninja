@@ -17,10 +17,6 @@ class InputController extends DefaultController
 {
     public function indexAction(Request $request)
     {
-        /** @var PublisherServiceInterface $_oPublisherService */
-        $_oPublisherService = $this->get(PublisherServiceInterface::DIC_NAME);
-        $_aPublishers = $_oPublisherService->getPublishers();
-
         $_oPublisher = new Publisher();
         $oForm = $this->createFormBuilder($_oPublisher)
             ->add('name', 'text')
@@ -44,7 +40,6 @@ class InputController extends DefaultController
         return $this->render(
             'DmoritzComixNinjaBundle:Publisher:inputForm.html.twig',
             array(
-                'aPublishers' => $_aPublishers,
                 'form' => $oForm->createView()
             )
         );

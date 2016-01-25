@@ -34,4 +34,8 @@
         <default key="_controller">DmoritzComixNinjaBundle:VintageCollection:index</default>
     </route>
 
+    <route id="input" path="/input">
+        <default key="_controller">DmoritzComixNinjaBundle:Input:index</default>
+    </route>
+
 </routes>

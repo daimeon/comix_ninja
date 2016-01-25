@@ -120,6 +120,6 @@ class PublisherController extends DefaultController
             array(
                 'sMessage' => 'Publisher created'
             )
-        )
+        );
     }
 }

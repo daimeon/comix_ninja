@@ -9,7 +9,7 @@
 namespace Dmoritz\ComixNinjaBundle\Entity;
 
 
-class Image
+class Images
 {
     /**
      * @var integer

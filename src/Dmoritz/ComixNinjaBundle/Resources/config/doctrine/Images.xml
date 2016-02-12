@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="Dmoritz\ComixNinjaBundle\Entity\Images">
+        <id name="iImageId" type="integer" column="image_id">
+            <generator strategy="AUTO"/>
+        </id>
+        <field name="sFileName" type="string" column="filename" length="255"/>
+
+    </entity>
+</doctrine-mapping>

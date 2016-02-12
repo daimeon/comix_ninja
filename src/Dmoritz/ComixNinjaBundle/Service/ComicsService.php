@@ -8,6 +8,7 @@
 
 namespace Dmoritz\ComixNinjaBundle\Service;
 
+use Dmoritz\ComixNinjaBundle\Entity\ComicFilter;
 use Doctrine\ORM\EntityManager;
 
 class ComicsService
@@ -37,6 +38,25 @@ class ComicsService
         $_sQuery = $_repository->createQueryBuilder('c')
             ->orderBy('c.title', 'ASC')
             ->getQuery();
+        $_aComics = $_sQuery->getResult();
+        if(!$_aComics)
+        {
+            return null;
+        }
+        return $_aComics;
+    }
+
+    public function searchComics(ComicFilter $comicFilter = null)
+    {
+        $_repository = $this
+            ->entityManager
+            ->getRepository('Dmoritz\ComixNinjaBundle\Entity\Comics');
+
+        $_sQuery = $_repository
+            ->createQueryBuilder('c')
+            ->orderBy('c.title', 'ASC')
+            ->getQuery();
+
         $_aComics = $_sQuery->getResult();
         if(!$_aComics)
         {
